@@ -11,7 +11,6 @@ const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="/" lazy={() => import("@/pages/home")} />
-      <Route path="features" lazy={() => import("@/pages/features")} />
     </Route>
   )
 )
