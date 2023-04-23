@@ -64,6 +64,10 @@ Prettier config has a 2 additional plugin;
 PWA plugin is configured to work with Vite. You can change the configuration in `vite.config.ts`.
 You need to replace the icons in `public` folder with your own icons.
 
+### [ui.shadcn.com ](https://ui.shadcn.com/)
+
+I added the required tailwind config to `tailwind.config.js`. You can copy the components to `ui` folder and use them (You need to install dependencies for ui components).
+
 ## Contributing
 
 For any questions, suggestions, or issues, please open an issue or pull request.
