@@ -23,7 +23,7 @@ const rootElement = document.getElementById("root")
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <RouterProvider router={router} />
     </ThemeProvider>
   )
