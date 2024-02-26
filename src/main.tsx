@@ -1,11 +1,30 @@
-import React from "react"
+import { RouterProvider, createRouter } from "@tanstack/react-router"
 import ReactDOM from "react-dom/client"
 
-import App from "./App.tsx"
+import { routeTree } from "./routeTree.gen"
 import "./index.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+// Set up a Router instance
+const router = createRouter({
+  routeTree,
+  defaultPreload: "intent",
+})
+
+// Register things for typesafety
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router
+  }
+}
+
+const rootElement = document.getElementById("root")
+
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement)
+  root.render(
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  )
+}
